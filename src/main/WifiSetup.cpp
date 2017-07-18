@@ -16,8 +16,8 @@ void WifiSetup::setupWifi() {
 
 void WifiSetup::setupWifi() {
 	Log::debug("Disable WiFiManager!");
-	Log::debug("SSID:" + IYN_WIFI_SSID);
-	Log::debug("PASSWORD:" + IYN_WIFI_PASSWORD);
+	Log::debug("SSID: " IYN_WIFI_SSID);
+	Log::debug("PASSWORD: " IYN_WIFI_PASSWORD);
 }
 
 #endif

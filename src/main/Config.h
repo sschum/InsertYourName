@@ -13,11 +13,18 @@
 
 #define IYN_WIFI_MANAGER_ON			1
 #define IYN_WIFI_MANAGER_OFF		0
-#define IYN_WIFI_MANAGER 			IYN_WIFI_MANAGER_OFF		//enable or disable wifi-manager
+#define IYN_WIFI_MANAGER 			IYN_WIFI_MANAGER_OFF	//enable or disable wifi-manager
 
 //if wifi-manager is disabled:
 #define IYN_WIFI_SSID 				"MY_SSID"				//the target access-point ssid
 #define IYN_WIFI_PASSWORD 			"PASSWORD"				//the target access-point password
+
+/**
+ * NFC-Settings
+ */
+
+#define IYN_NFC_PIN_SS				D8
+#define IYN_NFC_PIN_RST				D3
 
 /**
  * LOGGING

@@ -3,6 +3,8 @@
 
 class WifiSetup {
 public:
+	WifiSetup(){}
+
 	void setupWifi();
 };
 
