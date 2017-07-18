@@ -5,8 +5,9 @@
 #include "Config.h"
 #include "Logging.h"
 #include "WifiSetup.h"
+#include "NFCManager.h"
 
-MFRC522 mfrc522(IYN_NFC_PIN_SS, IYN_NFC_PIN_RST);
+NFCManager nfcManager;
 
 void setup() {
 	Serial.begin(IYN_SERIAL_BAUDRATE);
@@ -14,12 +15,9 @@ void setup() {
 	WifiSetup setup;
 	setup.setupWifi();
 
-	mfrc522.PCD_Init();
+	nfcManager.init();
 }
 
 void loop() {
-	if(mfrc522.PICC_IsNewCardPresent()){
-		Log::info("Card found");
-		mfrc522.PICC_DumpDetailsToSerial(&(mfrc522.uid));
-	}
+	nfcManager.waitForCard();
 }
