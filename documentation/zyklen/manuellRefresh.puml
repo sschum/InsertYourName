@@ -1,0 +1,11 @@
+@startuml
+title manueller refresh
+
+start
+note right
+  Anschalten via Hardwaredruckknopf
+end note
+
+stop
+
+@enduml

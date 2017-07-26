@@ -1,0 +1,33 @@
+@startuml
+title Setup
+
+start
+:Startbildschirm anzeigen;
+
+floating note left: Die Konfiguration beinhaltet:\
+\n- WIFI-SSID\
+\n- WIFI-Password\
+\n- MQTT-Host\
+\n- MQTT-Username\
+\n- MQTT-Password\
+\n- Raumnummer
+
+
+if (Konfigurationen vorhanden?) then (ja)
+
+else (nein)
+    :Wifi Hotspot anschalten;
+    :Webserver starten;
+    repeat
+      :Konfigurationen entgegennehmen;
+      :Verbinde WIFI;
+      :Verbinde MQTT;
+    repeat while (WIFI/MQTT erfolgreich verbunden?)
+    :Konfigurationen persistieren;
+    :Warte auf NFC Token;
+    :MQTT-Publish Hello;
+endif
+
+stop
+
+@enduml
